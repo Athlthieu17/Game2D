@@ -22,6 +22,7 @@ public class GamePanel extends JPanel implements Runnable{
     private MouseHandler mouse;
     private KeyHandler key;
     private GameStateManager gsm;
+    private GamePanel game;
     public GamePanel(int width, int height) {
         this.width = width;
         this.height = height;
@@ -40,7 +41,8 @@ public class GamePanel extends JPanel implements Runnable{
     public void init() {
         running = true;
         mouse = new MouseHandler();
-        key = new KeyHandler();
+
+        key = new KeyHandler(this);
 
         img = new BufferedImage(width,height,BufferedImage.TYPE_INT_ARGB);
         g = (Graphics2D) img.getGraphics();

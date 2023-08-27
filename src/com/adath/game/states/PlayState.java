@@ -14,7 +14,9 @@ public class PlayState extends GameState {
 
     }
     public void input(MouseHandler mouse, KeyHandler key) {
-
+        if(key.up.down){
+            System.out.println("'W' is being pressed");
+        }
     }
     public void render(Graphics2D g) {
         g.setColor(Color.RED);
